@@ -9,6 +9,17 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
 	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js" integrity="sha512-UyX8JsMsNRW1cYl8BoxpcamonpwU2y7mSTsN0Z52plp7oKo1u92Xqfpv6lOlTyH3yiMXK+gU1jw0DVCsPTfKew==" crossorigin="anonymous"></script>
+	<script src="js/scrollify.js"></script>
+	<script>
+		$.scrollify({
+  section:'.section', //対象要素を指定
+  easing: 'swing', // イージングを指定
+  scrollSpeed: 600, // スクロール時の速度
+  updateHash: false, // スクロール時アドレスバーのURLを更新
+});
+	</script>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/asset.css">
@@ -34,71 +45,47 @@
 		</header>
 
 		<main>
-			<section class="main-visual">
+			<section class="section main-visual">
 				<div class="main-visual-text">
 					<h1>CHANDRA</h1>
 					<p>Web Designer.</p>
 					<p>Markup Engineer.</p>
 				</div>
-				<img class="moon" src="images/chandra-moon05.png" alt="">
+				<img class="moon-bg" src="images/moon-bg.png" alt="">
+				<img class="moon" src="images/chandra-moon.png" alt="">
 				<img class="cloud1" src="images/cloud.png" alt="">
 				<img class="cloud2" src="images/cloud.png" alt="">
 			</section>
 
-			<section class="worries">
-				<h2>こんなお悩みお持ちではありませんか？</h2>
-				<div class="worries-content-wrapper">
-					<div class="worries-content">
-						<div class="worries-content-img"><img src="images/worries01.png" alt=""></div>
-						<p>ホームページが欲しいが、料金が高く手が出せない</p>
-					</div>
-					<div class="worries-content">
-						<div class="worries-content-img"><img src="images/worries02.png" alt=""></div>
-						<p>Webで集客したいが、何から始めてよいかわからない</p>
-					</div>
-					<div class="worries-content">
-						<div class="worries-content-img"><img src="images/worries03.png" alt=""></div>
-						<p>人手が足りずホームページのメンテナンスまで手が回らない</p>
-					</div>
+			<section id="feature" class="section feature">
+				<div class="feature__text">
+					<h2>お買い物はリアルよりもネットの時代</h2>
+					<p>コロナ禍の影響もあり、昨今では以前にも増してインターネットで物を買う人が増えています。しかし、多くの中小企業や個人経営の企業はまだまだインターネットを使ったマーケティングが活用しきれていない現状です。
+						私たちはそんなスモールビジネスの成長をWebのチカラでサポートします。</p>
+				</div>
+				<div class="feature__img--pc">
+					<img src="images/feature.png" alt="">
 				</div>
 			</section>
 
-			<section class="solution">
-				<div class="solution__title">
-					<span>CHANDRAなら</span>
-					<h2>これらの悩みを解決できます！</h2>
-					<p>CHANDRAでは中小企業向けに低価格でホームページを持つことができるように、サブスクリプション型（月額定額制）のホームページ制作サービスを提供しています。</p>
+			<section id="point">
+				<div class="point__text">
+					<span>CHANDRA POINT</span>
+					<h2>CHANDRAの特徴</h2>
+					<p>CHANDRAでは中小企業向けに低価格でホームページを持つことができるように、サブスクリプション型（月額定額制）のホームページ運用サービスを提供しています。</p>
+					<ul>
+						<li>サブスク型にすることで初期費用を抑え低価格でホームページを制作</li>
+						<li>お客様専任のウェブ担当者を配属&ZeroWidthSpace;することでお客様のビジネスの変化に合わせた柔軟な運用を提供</li>
+						<li>不満な点があればいつでも解約OK!</li>
+					</ul>
+					<a href="" class="btn_1 btn_1--gray">サービスの詳細はコチラ</a>
 				</div>
-				<div class="solution__content-wrapper">
-					<div class="solution__content">
-						<span>01</span>
-						<div class="solution__content-text">
-							<h2><span>課題解決のための</span>最適なデザイン</h2>
-							<p>お客様が抱えている課題やユーザビリティを考慮し、目的達成のために最適なデザインを作成します。</p>
-						</div>
-						<div class="solution__content-img"><img src="images/solution01.png" alt=""></div>
-					</div>
-					<div class="solution__content">
-						<span>02</span>
-						<div class="solution__content-text">
-							<h2><span>初心者でも簡単に</span>更新できるシステム</h2>
-							<p>WordPressというシステムを導入し、専門知識がない方で簡単にWebサイトを更新することが可能です。</p>
-						</div>
-						<div class="solution__content-img"><img src="images/solution02.png" alt=""></div>
-					</div>
-					<div class="solution__content">
-						<span>03</span>
-						<div class="solution__content-text">
-							<h2><span>初期費用なし。</span><br>高品質な運用を提供</h2>
-							<p>Webサイトは公開してからがスタートです。お客様のご要望に合わせ、柔軟な運用を提供します。</p>
-						</div>
-						<div class="solution__content-img"><img src="images/solution03.png" alt=""></div>
-					</div>
-					<a href="" class="btn_1">サービス詳細はコチラ</a>
-				</div>
+				<img class="moon" src="images/chandra-moon.png" alt="">
+				<img class="cloud1" src="images/cloud.png" alt="">
+				<img class="cloud2" src="images/cloud.png" alt="">
 			</section>
 
-			<section class="price-chart">
+			<section class="section price-chart">
 				<h2 class="section-title">制作料金プラン比較表</h2>
 				<table>
 					<thead>
@@ -145,7 +132,7 @@
 			<a href="" class="btn_1 btn_1--gray">料金プランの詳細はコチラ</a>
 			</section>
 
-			<section class="works">
+			<section class="section works">
 				<h2 class="section-title">制作実績</h2>
 				<div class="works_list">
 					<div class="works_item">
@@ -188,7 +175,7 @@
 				<a href="" class="btn_1">過去の制作実績はコチラ</a>
 			</section>
 
-			<section class="news">
+			<section class="section news">
 				<h2 class="section-title">お知らせ</h2>
 				<ul class="news_list">
 					<li class="news_item"><a href=""><span>2022-12-31</span>年末年始の営業のお知らせ</a></li>
@@ -207,5 +194,7 @@
 			</ul>
 		</footer>
 	</div>
+
+	<script src="js/common.js"></script>
 </body>
 </html>

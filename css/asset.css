@@ -151,14 +151,14 @@ a.btn_1--gray {
 }
 
 a.btn_1--gray:hover {
-  color: #0C1C27;
-  border: 1px solid #F2F2F2;
+  /* color: #0C1C27; */
+  border: 1px solid #2FC1FF;
 
 }
 
 a.btn_1--gray:hover:before ,
 a.btn_1--gray:hover:after {
-  background-color: #F2F2F2;
+  background-color: #2FC1FF;
 }
 
 .section-title {

@@ -9,7 +9,7 @@ a {
 
 body {
   display: flex;
-  background-color: #F2F2F2;
+  background-color: #0C1C27;
 }
 
 .container {
@@ -19,10 +19,14 @@ body {
 
 p {
   line-height: 1.5;
+  color: #F2F2F2;
 }
 
- main section {
+main section {
   margin-top: 100px;
+  position: relative;
+  z-index: 2;
+  height: 100vh;
 }
 
 /******************
@@ -87,11 +91,12 @@ main {
   width: 100%;
 }
 main .main-visual {
-  width: 80%;
-  height: 60vh;
-  margin: 50px auto;
-  padding: 30px 30px;
-  border-radius: 30px;
+  /* width: 80%; */
+  height: 100vh;
+  /* margin: 50px auto; */
+  margin-top: 0;
+  /* padding: 30px 30px; */
+  /* border-radius: 30px; */
   justify-content: space-between;
   background: linear-gradient(#1F3654, 25% , #0C1C27);
   background-position: center;
@@ -124,203 +129,238 @@ main .main-visual .main-visual-text p {
   font-size: 30px;
 }
 
-main .main-visual .moon {
+main .moon-bg {
   width: 80%;
-  position: absolute;
-  top: -20%;
-  right: -15%;
+  position: fixed;
+  top: 50%;
+  right: -16%;
+  transform: translateY(-50%);
+  animation: fadein 1.5s ease-out forwards;
+  z-index: 1;
 }
 
-main .main-visual .cloud1 {
+@keyframes fadein {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+main .moon {
+  width: 50%;
   position: absolute;
-  top: 20px;
-  right: -30px;
+  top: 50%;
+  right: -100%;
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: all 1.5s;
+}
+
+main .cloud1 {
+  position: absolute;
+  top: 10%;
+  right: -100%;
   width: 30%;
+  opacity: 0;
   transform: rotate(180deg);
+  transition: all 1.5s;
 }
 
-main .main-visual .cloud2 {
+main .cloud2 {
   position: absolute;
-  bottom: -5%;
-  right: 27%;
+  bottom: 5%;
+  right: -100%;
   width: 35%;
+  opacity: 0;
+  transition: all 1.5s;
+}
+main .fade-in--moon {
+  opacity: 1;
+  right: 5%;
+}
+
+main .fade-in--cloud1 {
+  opacity: 1;
+  right: 0;
+  transform: translateX(0) rotate(180deg);
+}
+
+main .fade-in--cloud2 {
+  opacity: 1;
+  right: 27%;
 }
 
 /******************
-  wories
+  feature
 ******************/
-main .worries {
-  width: 80%;
-  margin: auto;
-}
-
-main .worries h2 {
-  font-size: 25px;
-  width: 70%;
-  margin: 0 auto 50px;
-  text-align: center;
-  color: #FFF;
-  background-color: #0C1C27;
-  padding: 30px 0;
-  border-radius: 15px;
-  position: relative;
-}
-
-main .worries h2::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: -19px;
-  left: 0;
-  width: 0px;
-  height: 0px;
-  margin: auto;
-  border-style: solid;
-  border-color: #0C1C27 transparent transparent transparent;
-  border-width: 20px 20px 0 20px;
-  border-radius: 3px;
-}
-
-main .worries .worries-content-wrapper {
+#feature {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  margin-top: 100px;
+  width: 90%;
+  height: 100vh;
+  margin: auto;
+  align-items: center
 }
 
-main .worries .worries-content-wrapper .worries-content {
-  color: #0C1C27;
-  width: 25%;
-}
-
-main .worries .worries-content-wrapper .worries-content-img {
+#feature .feature__text {
   width: 50%;
-  margin: 0 auto 30px;
-  background-color: #FFF;
-  border-radius: 50%;
-  padding: 50px;
+  /* padding-right: 30px; */
+  margin-top: 50px;
 }
 
-main .worries .worries-content-wrapper .worries-content-img img {
+#feature .feature__text h2 {
+  font-size: 3em;
+  color: #2FC1FF;
+  margin-bottom: 30px;
+}
+
+#feature .feature__text p {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+#feature .feature__img--sp {
+  display: none;
+}
+
+#feature .feature__img--pc {
+  width: 60%;
+  padding-left: 30px;
+}
+
+#feature .feature__img--pc img {
   width: 100%;
 }
 
-main .worries .worries-content-wrapper .worries-content p {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-main .solution {
-  width: 70%;
+/******************
+  point
+******************/
+#point {
+  width: 90%;
+  height: 100vh;
   margin: auto;
-  text-align: center;
-  margin-top: 200px;
-  position: relative;
-}
-
-main .solution::before {
-  color: #0C1C27;
-  position: absolute;
-  top: -130px;
-  left: 50%;
-  font-family: "Font Awesome 5 Free";
-  content: '\f103';
-  font-weight: 900;
-  font-size: 5em;
-  transform: translateX(-50%);
-}
-
-.solution .solution__title span {
-  font-size: 20px;
-  font-weight: bold;
-  position: relative;
-  color: #4C5253;
-}
-
-.solution .solution__title span::before {
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  left: -30px;
-  transform: rotate(50deg);
-  width: 25px;
-  height: 3px;
-  border-radius: 5px;
-  background-color: #4C5253;
-  content: "";
-}
-
-.solution .solution__title span::after {
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  right: -30px;
-  transform: rotate(-50deg);
-  width: 25px;
-  height: 3px;
-  border-radius: 5px;
-  background-color: #4C5253;
-  content: "";
-}
-
-.solution .solution__title h2 {
-  font-size: 30px;
-  margin-top: 15px;
-  margin-bottom: 30px;
-  color: #2FC1FF;
-}
-
-.solution .solution__title p {
-  text-align: left;
-  font-size: 20px;
-  font-weight: bold;
-  color: #0C1C27;
-  margin-bottom: 50px;
-}
-
-.solution .solution__content-wrapper .solution__content {
   display: flex;
-  text-align: left;
-  color: #0C1C27;
-  background-color: #FFF;
-  border-radius: 35px;
-  margin-bottom: 30px;
-}
-
-.solution .solution__content-wrapper .solution__content > span {
-  width: 10%;
-  font-size: 70px;
-  font-weight: bold;
-  display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin-left: 50px;
+  background-image: url(../images/chandra-point-bg.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
 }
 
-.solution .solution__content-wrapper .solution__content .solution__content-text {
-  width: 60%;
-  margin: 50px;
+#point .point__image--sp {
+  display: none;
 }
 
-.solution .solution__content-wrapper .solution__content h2 {
-  font-size: 35px;
-  font-weight: bold;
-  margin-bottom: 25px;
-}
-
-.solution .solution__content-wrapper .solution__content .solution__content-text h2 span {
-  color: #2FC1FF;
-}
-
-.solution .solution__content-wrapper .solution__content p {
-  font-size: 20px;
-}
-
-.solution .solution__content-wrapper .solution__content .solution__content-img {
-  width: 30%;
-  text-align: right;
+#point .point__image--pc {
+  width: 25%;
   margin-right: 100px;
 }
 
-.solution .solution__content-wrapper .solution__content .solution__content-img img {
-  width: 80%;
+#point .point__image--pc img {
+  width: 100%;
+}
+
+#point .point__text {
+  width: 45%;
+}
+
+#point .point__text span {
+  font-weight: bold;
+  color: #2FC1FF;
+}
+
+#point .point__text h2 {
+  font-size: 3em;
+  margin-bottom: 15px;
+  color: #2FC1FF;
+}
+
+#point .point__text p {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #f2f2f2;
+  margin-bottom: 30px;
+}
+
+#point .point__text ul {
+  margin-bottom: 50px;
+}
+
+#point .point__text ul li {
+  color: #F2F2F2;
+  font-weight: bold;
+  font-size: 1.2em;
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+#point .point__text ul li::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  background-color: #2FC1FF;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.point__button {
+  margin-top: 30px;
+}
+
+.point__button a {
+  background: #eee;
+  border-radius: 3px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 280px;
+  padding: 10px 25px;
+  color: #313131;
+  transition: 0.3s ease-in-out;
+  font-weight: bold;
+}
+.point__button a:after {
+content: "";
+position: absolute;
+top: 50%;
+bottom: 0;
+right: 2rem;
+font-size: 90%;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: right 0.3s;
+width: 6px;
+height: 6px;
+border-top: solid 2px currentColor;
+border-right: solid 2px currentColor;
+transform: translateY(-50%) rotate(45deg);
+}
+.point__button a:hover {
+background: #6bb6ff;
+color: #FFF;
+}
+.point__button a:hover:after {
+right: 1.4rem;
+}
+
+main #point .fade-in--moon {
+  right: 2%;
+}
+
+main #point .fade-in--cloud1 {
+  right: -3%;
+}
+
+main #point .fade-in--cloud2 {
+  right: 24%;
 }
 /******************
   price-chart
@@ -332,7 +372,7 @@ main .price-chart {
   background-repeat: no-repeat;
   background-attachment: fixed;
   text-align: center;
-  padding-bottom: 80px;
+  /* padding-bottom: 80px; */
 }
 
 main .price-chart .section-title {
